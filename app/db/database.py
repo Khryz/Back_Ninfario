@@ -8,7 +8,7 @@ HOST = "localhost"
 PORT = "3306"
 DB_NAME = "mydb"
 
-DATABASE_URL = f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB_NAME}"
+DATABASE_URL = f"mysql+pymysql://{os.getenv('MYSQLUSER')}:{os.getenv('MYSQLPASSWORD')}@{os.getenv('MYSQLHOST')}:{os.getenv('MYSQLPORT')}/{os.getenv('MYSQLDATABASE')}"
 
 engine = create_engine(DATABASE_URL, echo=True, future=True)
 
