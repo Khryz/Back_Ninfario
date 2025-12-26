@@ -4,7 +4,6 @@ from app.models.ninfa_model import Ninfa
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 
-
 def get_all_ninfas_db(db: Session):
     ninfas = db.query(Ninfa).all()
     return ninfas
